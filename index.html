@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Машина "Муха" летит в Самару</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+            height: 100vh;
+        }
+        
+        .road {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            background: #333;
+        }
+        
+        .car {
+            position: absolute;
+            width: 150px;
+            height: 80px;
+            bottom: 100px;
+            left: -150px;
+            animation: drive 5s linear infinite;
+        }
+        
+        .car img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .clouds {
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            top: 50px;
+            animation: clouds 20s linear infinite;
+        }
+        
+	.moscow-sign {
+            position: absolute;
+            left: 50px;
+            bottom: 120px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px #000;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .samara-sign {
+            position: absolute;
+            right: 50px;
+            bottom: 120px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px #000;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        @keyframes drive {
+            0% {
+                transform: translateX(-150px);
+            }
+            100% {
+                transform: translateX(calc(100vw + 150px));
+            }
+        }
+        
+        @keyframes clouds {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="road"></div>
+    <div class="moscow-sign">Москва</div>
+    <div class="samara-sign">Самара →</div>
+    
+    <div class="car">
+        <!-- Простая "муха" машина из символов -->
+        <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="40" width="160" height="40" rx="5" fill="#FF4500"/>
+            <rect x="50" y="30" width="80" height="10" fill="#FF4500"/>
+            <circle cx="60" cy="80" r="15" fill="#333"/>
+            <circle cx="140" cy="80" r="15" fill="#333"/>
+            <text x="70" y="60" font-family="Arial" font-size="20" fill="white">МУХА</text>
+        </svg>
+    </div>
+    
+    <div class="clouds">
+        <svg width="100%" height="100" viewBox="0 0 1000 100">
+            <path d="M50,50 Q75,30 100,50 Q125,70 150,50 Q175,30 200,50" stroke="white" stroke-width="2" fill="none"/>
+            <path d="M300,40 Q325,20 350,40 Q375,60 400,40 Q425,20 450,40" stroke="white" stroke-width="2" fill="none"/>
+            <path d="M600,60 Q625,40 650,60 Q675,80 700,60 Q725,40 750,60" stroke="white" stroke-width="2" fill="none"/>
+            <path d="M800,30 Q825,10 850,30 Q875,50 900,30 Q925,10 950,30" stroke="white" stroke-width="2" fill="none"/>
+        </svg>
+    </div>
+    
+    <script>
+        // Можно добавить звук двигателя при желании
+        // const audio = new Audio('engine.mp3');
+        // audio.loop = true;
+        // setTimeout(() => audio.play(), 500);
+    </script>
+</body>
+</html>
