@@ -94,7 +94,6 @@
     <div class="samara-sign">Самара →</div>
     
     <div class="car">
-        <!-- Простая "муха" машина из символов -->
         <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
             <rect x="20" y="40" width="160" height="40" rx="5" fill="#FF4500"/>
             <rect x="50" y="30" width="80" height="10" fill="#FF4500"/>
@@ -113,10 +112,14 @@
         </svg>
     </div>
     
+    <audio id="engineSound" loop>
+        <source src="https://zvukogram.com/mp3/p2/1350/moschnyiy-dvigatel-na-holostom-hodu-34208.mp3" type="audio/mpeg">
+    </audio>
+
     <script>
-        const audio = new Audio('engine.mp3');
-        audio.loop = true;
-        setTimeout(() => audio.play(), 500);
+        setTimeout(() => {
+            document.querySelector('.car').style.animationPlayState = 'running';
+        }, 500);
     </script>
 </body>
 </html>
